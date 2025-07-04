@@ -52,6 +52,10 @@ async def echo_all(message: types.Message):
         elif message.document:
             await message.answer_document(message.document.file_id)
 
+        # видео-кружки
+        elif message.video_note:
+            await message.answer_video_note(message.video_note.file_id)
+
         # Для других типов kringe
         else:
             await message.answer("хз как ответить на кружочки")
